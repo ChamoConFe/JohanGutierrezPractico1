@@ -1,6 +1,6 @@
 ﻿using JohanGutierrezPractico1.Modelos;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 
 namespace JohanGutierrezPractico1.Controladores
@@ -30,7 +30,7 @@ namespace JohanGutierrezPractico1.Controladores
                 datos.Clientes[index].FechaRegistro = cliente.FechaRegistro;
                 //datos.Clientes[index].CantidadFacturas = cliente.CantidadFacturas;
                 //datos.Clientes[index].NumeroUltimaFactura = cliente.NumeroUltimaFactura;
-                // datos.Clientes[index].MontoUltimaFactura = cliente.MontoUltimaFactura;
+                //datos.Clientes[index].MontoUltimaFactura = cliente.MontoUltimaFactura;
             }
         }
 

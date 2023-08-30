@@ -91,6 +91,8 @@ namespace JohanGutierrezPractico1
             }
         }
 
+        //el modificar solo deja modificar dando click en la fila pero a partir de fecha, ojo corregir, tampoco verifica bien si el rut esta duplicado al seleccionar desde alli
+        // tambien si quiero agregar nuevo cliente solo me deja los campos habilitados, es decir no se habilitan de nuevo luego de bloquearlos al modificar, quedan bloqueados.
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada >= 0 && filaSeleccionada < dgClientes.Rows.Count)
