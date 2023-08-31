@@ -39,12 +39,18 @@ namespace JohanGutierrezPractico1.Controladores
             datos.Clientes.RemoveAt(index);
         }
 
-        public bool ExisteRutDuplicado(string rut)
+        public bool ExisteRutDuplicado(string rut, int indexToExclude = -1)
         {
             // Verificar si hay algún cliente con el mismo RUT en la lista de clientes.
-            foreach (var cliente in ObtenerClientes()) // Utiliza el método ObtenerClientes para obtener la lista.
+            for (int i = 0; i < ObtenerClientes().Count; i++)
             {
-                if (cliente.Rut.Equals(rut, StringComparison.OrdinalIgnoreCase)) // Comparación sin importar mayúsculas o minúsculas
+                if (i == indexToExclude)
+                {
+                    // Si el índice coincide con el índice a excluir (por ejemplo, durante una edición), omitir la verificación.
+                    continue;
+                }
+
+                if (ObtenerClientes()[i].Rut.Equals(rut, StringComparison.OrdinalIgnoreCase)) // Comparación sin importar mayúsculas o minúsculas
                 {
                     return true; // Se encontró un RUT duplicado.
                 }
@@ -52,5 +58,6 @@ namespace JohanGutierrezPractico1.Controladores
 
             return false; // No se encontraron RUT duplicados.
         }
+
     }
 }

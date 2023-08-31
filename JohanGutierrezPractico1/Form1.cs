@@ -12,7 +12,7 @@ namespace JohanGutierrezPractico1
     public partial class Form1 : Form
     {
         private DataTable tabla;
-        ClienteController clienteController = new ClienteController();
+        private ClienteController clienteController = new ClienteController();
         int filaSeleccionada;
         string accion = "guardar";
 
@@ -91,8 +91,6 @@ namespace JohanGutierrezPractico1
             }
         }
 
-        //el modificar solo deja modificar dando click en la fila pero a partir de fecha, ojo corregir, tampoco verifica bien si el rut esta duplicado al seleccionar desde alli
-        // tambien si quiero agregar nuevo cliente solo me deja los campos habilitados, es decir no se habilitan de nuevo luego de bloquearlos al modificar, quedan bloqueados.
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada >= 0 && filaSeleccionada < dgClientes.Rows.Count)
@@ -157,6 +155,16 @@ namespace JohanGutierrezPractico1
                 if (string.IsNullOrWhiteSpace(txtDireccion.Text))
                     throw new Exception("El campo Dirección es requerido.");
 
+                // Verificar si el RUT está duplicado (excluyendo el índice si se está editando)
+                if (accion == "guardar" && clienteController.ExisteRutDuplicado(txtRut.Text))
+                {
+                    throw new Exception("Ya existe un cliente con el mismo RUT.");
+                }
+                else if (accion == "editar" && clienteController.ExisteRutDuplicado(txtRut.Text, filaSeleccionada))
+                {
+                    throw new Exception("Ya existe un cliente con el mismo RUT.");
+                }
+
                 // Validar que estás en modo de guardado
                 if (accion == "guardar")
                 {
@@ -215,6 +223,11 @@ namespace JohanGutierrezPractico1
 
                 MostrarListaClientes();
                 LimpiarFormularioClientes();
+
+                // Vuelve a habilitar la edición de los campos que bloqueados
+                txtCantidadFacturas.Enabled = true;
+                txtNumeroUltimaFactura.Enabled = true;
+                txtMontoUltimaFactura.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -247,6 +260,11 @@ namespace JohanGutierrezPractico1
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             MostrarListaClientes();
+            LimpiarFormularioClientes();
+            // Vuelve a habilitar la edición de los campos que bloqueados
+            txtCantidadFacturas.Enabled = true;
+            txtNumeroUltimaFactura.Enabled = true;
+            txtMontoUltimaFactura.Enabled = true;
         }
 
         private void ObtenerYMostrarIndicadores()
@@ -311,6 +329,5 @@ namespace JohanGutierrezPractico1
                 lblFecha.Text = "Error al obtener la fecha: " + ex.Message;
             }
         }
-
     }
 }
