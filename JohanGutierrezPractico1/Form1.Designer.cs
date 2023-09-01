@@ -53,6 +53,8 @@
             this.lblValorUF = new System.Windows.Forms.Label();
             this.lblValorDolar = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.btnIngresarUltimaFactura = new System.Windows.Forms.Button();
+            this.BtnModificarFacturaExistente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,112 +63,100 @@
             this.dgClientes.AllowUserToAddRows = false;
             this.dgClientes.AllowUserToDeleteRows = false;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Location = new System.Drawing.Point(713, 15);
-            this.dgClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgClientes.Location = new System.Drawing.Point(566, 12);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
-            this.dgClientes.Size = new System.Drawing.Size(956, 761);
+            this.dgClientes.Size = new System.Drawing.Size(944, 618);
             this.dgClientes.TabIndex = 0;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgClientes_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "RUT:";
             // 
             // txtRut
             // 
-            this.txtRut.Location = new System.Drawing.Point(324, 15);
-            this.txtRut.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRut.Location = new System.Drawing.Point(243, 12);
             this.txtRut.Name = "txtRut";
-            this.txtRut.Size = new System.Drawing.Size(265, 22);
+            this.txtRut.Size = new System.Drawing.Size(200, 20);
             this.txtRut.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "NOMBRE:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(324, 65);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(243, 53);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(265, 22);
+            this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 139);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "ES EMPRESA:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 194);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "TELEFONO:";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(324, 191);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.Location = new System.Drawing.Point(243, 155);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(265, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(200, 20);
             this.txtTelefono.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 244);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 16);
+            this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "DIRECCION:";
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(324, 235);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.Location = new System.Drawing.Point(243, 191);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(265, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(200, 20);
             this.txtDireccion.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 295);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 240);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 16);
+            this.label6.Size = new System.Drawing.Size(122, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "FECHA DE REGISTRO:";
             // 
             // datePickerFechaRegistro
             // 
-            this.datePickerFechaRegistro.Location = new System.Drawing.Point(324, 287);
-            this.datePickerFechaRegistro.Margin = new System.Windows.Forms.Padding(4);
+            this.datePickerFechaRegistro.Location = new System.Drawing.Point(243, 233);
             this.datePickerFechaRegistro.Name = "datePickerFechaRegistro";
-            this.datePickerFechaRegistro.Size = new System.Drawing.Size(265, 22);
+            this.datePickerFechaRegistro.Size = new System.Drawing.Size(200, 20);
             this.datePickerFechaRegistro.TabIndex = 4;
             // 
             // cbEsEmpresa
@@ -177,19 +167,17 @@
             this.cbEsEmpresa.Items.AddRange(new object[] {
             "NO",
             "SI"});
-            this.cbEsEmpresa.Location = new System.Drawing.Point(324, 129);
-            this.cbEsEmpresa.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEsEmpresa.Location = new System.Drawing.Point(243, 105);
             this.cbEsEmpresa.Name = "cbEsEmpresa";
-            this.cbEsEmpresa.Size = new System.Drawing.Size(265, 24);
+            this.cbEsEmpresa.Size = new System.Drawing.Size(200, 21);
             this.cbEsEmpresa.TabIndex = 5;
             this.cbEsEmpresa.Text = "SELECCIONE UNA OPCION";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(195, 506);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(146, 411);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "AGREGAR";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -198,64 +186,57 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 352);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 286);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 16);
+            this.label7.Size = new System.Drawing.Size(143, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "CANTIDAD DE FACTURAS:";
             // 
             // txtCantidadFacturas
             // 
-            this.txtCantidadFacturas.Location = new System.Drawing.Point(324, 343);
-            this.txtCantidadFacturas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCantidadFacturas.Location = new System.Drawing.Point(243, 279);
             this.txtCantidadFacturas.Name = "txtCantidadFacturas";
-            this.txtCantidadFacturas.Size = new System.Drawing.Size(265, 22);
+            this.txtCantidadFacturas.Size = new System.Drawing.Size(200, 20);
             this.txtCantidadFacturas.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 389);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(12, 316);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(189, 16);
+            this.label8.Size = new System.Drawing.Size(154, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "NUMERO ULTIMA FACTURA:";
             // 
             // txtNumeroUltimaFactura
             // 
-            this.txtNumeroUltimaFactura.Location = new System.Drawing.Point(324, 380);
-            this.txtNumeroUltimaFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroUltimaFactura.Location = new System.Drawing.Point(243, 309);
             this.txtNumeroUltimaFactura.Name = "txtNumeroUltimaFactura";
-            this.txtNumeroUltimaFactura.Size = new System.Drawing.Size(265, 22);
+            this.txtNumeroUltimaFactura.Size = new System.Drawing.Size(200, 20);
             this.txtNumeroUltimaFactura.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 431);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(12, 350);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(179, 16);
+            this.label9.Size = new System.Drawing.Size(146, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "MONTO ULTIMA FACTURA:";
             // 
             // txtMontoUltimaFactura
             // 
-            this.txtMontoUltimaFactura.Location = new System.Drawing.Point(324, 422);
-            this.txtMontoUltimaFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMontoUltimaFactura.Location = new System.Drawing.Point(243, 343);
             this.txtMontoUltimaFactura.Name = "txtMontoUltimaFactura";
-            this.txtMontoUltimaFactura.Size = new System.Drawing.Size(265, 22);
+            this.txtMontoUltimaFactura.Size = new System.Drawing.Size(200, 20);
             this.txtMontoUltimaFactura.TabIndex = 2;
             // 
             // btnModificar
             // 
             this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(605, 15);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Location = new System.Drawing.Point(454, 12);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -264,10 +245,9 @@
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(605, 50);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(454, 41);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -276,38 +256,65 @@
             // lblValorUF
             // 
             this.lblValorUF.AutoSize = true;
-            this.lblValorUF.Location = new System.Drawing.Point(16, 604);
+            this.lblValorUF.Location = new System.Drawing.Point(12, 491);
+            this.lblValorUF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorUF.Name = "lblValorUF";
-            this.lblValorUF.Size = new System.Drawing.Size(25, 16);
+            this.lblValorUF.Size = new System.Drawing.Size(21, 13);
             this.lblValorUF.TabIndex = 8;
             this.lblValorUF.Text = "UF";
             // 
             // lblValorDolar
             // 
             this.lblValorDolar.AutoSize = true;
-            this.lblValorDolar.Location = new System.Drawing.Point(321, 604);
+            this.lblValorDolar.Location = new System.Drawing.Point(241, 491);
+            this.lblValorDolar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorDolar.Name = "lblValorDolar";
-            this.lblValorDolar.Size = new System.Drawing.Size(53, 16);
+            this.lblValorDolar.Size = new System.Drawing.Size(44, 13);
             this.lblValorDolar.TabIndex = 8;
             this.lblValorDolar.Text = "DOLAR";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(141, 648);
+            this.lblFecha.Location = new System.Drawing.Point(106, 526);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(52, 16);
+            this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 10;
             this.lblFecha.Text = "FECHA";
             // 
+            // btnIngresarUltimaFactura
+            // 
+            this.btnIngresarUltimaFactura.Enabled = false;
+            this.btnIngresarUltimaFactura.Location = new System.Drawing.Point(443, 369);
+            this.btnIngresarUltimaFactura.Name = "btnIngresarUltimaFactura";
+            this.btnIngresarUltimaFactura.Size = new System.Drawing.Size(117, 23);
+            this.btnIngresarUltimaFactura.TabIndex = 7;
+            this.btnIngresarUltimaFactura.Text = "INGRESO FACTURA";
+            this.btnIngresarUltimaFactura.UseVisualStyleBackColor = true;
+            this.btnIngresarUltimaFactura.Click += new System.EventHandler(this.BtnIngresarUltimaFactura_Click);
+            // 
+            // BtnModificarFacturaExistente
+            // 
+            this.BtnModificarFacturaExistente.Enabled = false;
+            this.BtnModificarFacturaExistente.Location = new System.Drawing.Point(243, 369);
+            this.BtnModificarFacturaExistente.Name = "BtnModificarFacturaExistente";
+            this.BtnModificarFacturaExistente.Size = new System.Drawing.Size(194, 23);
+            this.BtnModificarFacturaExistente.TabIndex = 7;
+            this.BtnModificarFacturaExistente.Text = "MODIFICAR FACTURAS CLIENTES";
+            this.BtnModificarFacturaExistente.UseVisualStyleBackColor = true;
+            this.BtnModificarFacturaExistente.Click += new System.EventHandler(this.BtnModificarFacturaExistente_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 790);
+            this.ClientSize = new System.Drawing.Size(1522, 642);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblValorDolar);
             this.Controls.Add(this.lblValorUF);
+            this.Controls.Add(this.BtnModificarFacturaExistente);
+            this.Controls.Add(this.btnIngresarUltimaFactura);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
@@ -330,9 +337,8 @@
             this.Controls.Add(this.txtRut);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgClientes);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "OFICINA DE CONTADORES - GESTION DE CLIENTES";
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -366,6 +372,8 @@
         private System.Windows.Forms.Label lblValorUF;
         private System.Windows.Forms.Label lblValorDolar;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Button btnIngresarUltimaFactura;
+        private System.Windows.Forms.Button BtnModificarFacturaExistente;
     }
 }
 

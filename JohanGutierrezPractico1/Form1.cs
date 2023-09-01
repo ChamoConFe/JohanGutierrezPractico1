@@ -125,6 +125,9 @@ namespace JohanGutierrezPractico1
 
                 btnEliminar.Enabled = false;
                 btnModificar.Enabled = false;
+                btnIngresarUltimaFactura.Enabled = true;
+                BtnModificarFacturaExistente.Enabled = true;
+
             }
             else
             {
@@ -266,6 +269,115 @@ namespace JohanGutierrezPractico1
             txtNumeroUltimaFactura.Enabled = true;
             txtMontoUltimaFactura.Enabled = true;
         }
+
+        // 3. Evento Click para Ingresar Última Factura
+        private void BtnIngresarUltimaFactura_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar que los campos "Número Última Factura" y "Monto Última Factura" no estén vacíos
+                if (string.IsNullOrWhiteSpace(txtNumeroUltimaFactura.Text) || string.IsNullOrWhiteSpace(txtMontoUltimaFactura.Text))
+                    throw new Exception("Ambos campos son requeridos.");
+
+                // Validar que los campos sean valores numéricos válidos
+                if (!int.TryParse(txtNumeroUltimaFactura.Text, out int numeroUltimaFactura) || !decimal.TryParse(txtMontoUltimaFactura.Text, out decimal montoUltimaFactura))
+                    throw new Exception("Los campos deben ser valores numéricos válidos.");
+
+                // Obtener el cliente seleccionado
+                if (filaSeleccionada >= 0 && filaSeleccionada < dgClientes.Rows.Count)
+                {
+                    Cliente cliente = clienteController.ObtenerClientes()[filaSeleccionada];
+
+                    // Verificar que el "Número Última Factura" no sea igual al valor existente
+                    if (numeroUltimaFactura == cliente.NumeroUltimaFactura)
+                        throw new Exception("El número de la última factura ya existe para este cliente.");
+
+                    // Actualizar los campos en el cliente seleccionado
+                    cliente.NumeroUltimaFactura = numeroUltimaFactura;
+                    cliente.MontoUltimaFactura = montoUltimaFactura;
+                    cliente.CantidadFacturas++; // Aumentar la cantidad de facturas
+
+                    // Actualizar el DataGrid
+                    MostrarListaClientes();
+
+                    // Limpiar los campos //de "Número Última Factura" y "Monto Última Factura"
+                    LimpiarFormularioClientes();
+                    // Habilitar los campos de "Número Última Factura" y "Monto Última Factura"
+                    txtNumeroUltimaFactura.Enabled = true;
+                    txtMontoUltimaFactura.Enabled = true;
+
+                    // Bloquear los campos de cliente
+                    txtRut.Enabled = true;
+                    txtNombre.Enabled = true;
+                    cbEsEmpresa.Enabled = true;
+                    txtTelefono.Enabled = true;
+                    txtDireccion.Enabled = true;
+                    datePickerFechaRegistro.Enabled = true;
+                    txtCantidadFacturas.Enabled = true;
+                    // Deshabilitar el botón "Ingresar Última Factura"
+                    btnIngresarUltimaFactura.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un cliente válido para ingresar la última factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnModificarFacturaExistente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (filaSeleccionada >= 0 && filaSeleccionada < dgClientes.Rows.Count)
+                {
+                    DataGridViewRow fila = dgClientes.Rows[filaSeleccionada];
+
+                    txtRut.Text = fila.Cells[0].Value.ToString();
+                    txtNombre.Text = fila.Cells[1].Value.ToString();
+
+                    // Obtiene el valor de "Es Empresa" en el cliente seleccionado
+                    string valorCelda = fila.Cells[2].Value.ToString();
+                    bool esEmpresa = (valorCelda == "Si");
+
+                    // Actualiza la selección en cbEsEmpresa
+                    cbEsEmpresa.SelectedIndex = esEmpresa ? 1 : 0;
+                    txtTelefono.Text = fila.Cells[3].Value.ToString();
+                    txtDireccion.Text = fila.Cells[4].Value.ToString();
+                    //datePickerFechaRegistro.Value = DateTime.Parse(fila.Cells[5].Value.ToString());
+                    txtCantidadFacturas.Text = fila.Cells[6].Value.ToString();
+
+                    // Habilitar los campos de "Número Última Factura" y "Monto Última Factura"
+                    txtNumeroUltimaFactura.Enabled = true;
+                    txtMontoUltimaFactura.Enabled = true;
+
+                    // Bloquear los campos de cliente
+                    txtRut.Enabled = false;
+                    txtNombre.Enabled = false;
+                    cbEsEmpresa.Enabled = false;
+                    txtTelefono.Enabled = false;
+                    txtDireccion.Enabled = false;
+                    datePickerFechaRegistro.Enabled = false;
+                    txtCantidadFacturas.Enabled = false;
+
+                    // Deshabilitar el botón "Modificar Factura Existente" y habilitar el botón "Guardar"
+                    BtnModificarFacturaExistente.Enabled = false;
+                    btnGuardar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un cliente válido para modificar la factura existente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void ObtenerYMostrarIndicadores()
         {
